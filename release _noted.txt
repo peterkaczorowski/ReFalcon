@@ -1,0 +1,17 @@
+Relesee notes.
+
+1. Rev 1.1 is derivative of rev.1 with identified HW bugs fixed listed in changelog on the 1st page of the schematics.
+
+2. The included PDF is indexed which allows selecting desired part or net from the part/net tree which automatically takes cursor to page of the schematic and PCB drawing where such part is located. 
+Also, hovering cursor above part on the schematic should reveal it's parameters which are also listed in the bill of materials (BOM).
+NOTE: The indexing and parameters reveal features may not work on some PDF viewers so to fully use this feature use Acrobat Reader to view the file. 
+
+3. The PCBA contains exposed through hole test points which are not filled. This is intentional.
+
+4. All soldernask covered vias can be filled but it's not mandatory.
+
+5. The Gerber package contains paste files (.GTP and .GBP for top and bottom layer respectively) which are used to make stencils for automated SMT assembly. Some users use stencils for DIY homebrewed board assembly which when combined with reflow oven, speeds up the surface mount assembly process.
+
+2026-08-13
+
+                                            
