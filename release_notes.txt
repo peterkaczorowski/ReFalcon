@@ -1,5 +1,7 @@
 Relesee notes.
 
+2026-08-13
+
 1. Rev 1.1 is derivative of rev.1 with identified HW bugs fixed listed in changelog on the 1st page of the schematics.
 
 2. The included PDF is indexed which allows selecting desired part or net from the part/net tree which automatically takes cursor to page of the schematic and PCB drawing where such part is located. 
@@ -12,4 +14,10 @@ NOTE: The indexing and parameters reveal features may not work on some PDF viewe
 
 5. The Gerber package contains paste files (.GTP and .GBP for top and bottom layer respectively) which are used to make stencils for automated SMT assembly. Some users use stencils for DIY homebrewed board assembly which when combined with reflow oven, speeds up the surface mount assembly process.
 
-2026-08-13
+2026-08-15
+
+6. The .GM1 Gerber file contains information about board stack-up. See stack-up table and observe mandatory use of specific stack-up JLCPCB p/n JLC08161H-1080 which was used to design controlled impedance routing for clock signal path (.G3 Gerber). In order to keep desired impedance, you MUST USE SPECIFIED STACK-UP P/N, otherwise the board may exhibit poor performance or not work at all. 
+When using different vendor/stack-up you must specify 50ohm controller impedance requirement for the .G3 layer, so vendor will adjust their stack-up to meet this requirement and/or may adjust existing clock routing to meet 50 ohm. This is standard practice in the industry so as long as vendor guarantee desired impedance after making such modification, all is good
+
+7. Do not change specified copper weight for each layer. Such attempt changes characteristics of the stack-up affecting board performance. Follow the specified PCB stackup, for example: JLCPCB p/n JLC08161H-1080.
+
