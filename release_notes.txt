@@ -19,5 +19,11 @@ NOTE: The indexing and parameters reveal features may not work on some PDF viewe
 6. The .GM1 Gerber file contains information about board stack-up. See stack-up table and observe mandatory use of specific stack-up JLCPCB p/n JLC08161H-1080 which was used to design controlled impedance routing for clock signal path (.G3 Gerber). In order to keep desired impedance, you MUST USE SPECIFIED STACK-UP P/N, otherwise the board may exhibit poor performance or not work at all. 
 When using different vendor/stack-up you must specify 50ohm controller impedance requirement for the .G3 layer, so vendor will adjust their stack-up to meet this requirement and/or may adjust existing clock routing to meet 50 ohm. This is standard practice in the industry so as long as vendor guarantee desired impedance after making such modification, all is good
 
-7. Do not change specified copper weight for each layer. Such attempt changes characteristics of the stack-up affecting board performance. Follow the specified PCB stackup, for example: JLCPCB p/n JLC08161H-1080.
+7. Do not change specified copper weight for each layer. Such attempt changes characteristics of the stack-up affecting board performance. Follow the specified PCB stack-up, for example: JLCPCB p/n JLC08161H-1080.
+
+8. Copper layer sequence. Observe and maintain copper layers sequence in the 8-layer PCB stack-up. The .GM1 gerber file contains stack-up table with Gerber file extension column. The sequence from the top layer to bottom is: GTL - GP1 - G1 - G2 - GP2 - G3 - GP3 - GBL. Failing to follow the sequence may result in reduced performance assembly and may remove designed in 50ohm controlled impedance feature for the clock signal path. 
+
+9. Vias and pads. Follow Gerbers describing top and bottom soldermask features including masking most vias while leaving some unmasked. Many PCB houses ask to specify whether to mask vias or left all unmasked. The correct answer to this question is to "follow GTS and GBS Gerbers".
+
+10. PCB Finish. It is recommended to use ENIG finish which is economy "gold plated" finish version. However leaded finish is easier for hand soldering but requires gloves to handle the PCB due to presence of the lead on the pads. 
 
